@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const init = {
   weight: 0,
@@ -18,19 +19,26 @@ function BMICalculator() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (formData.weight < 0 || formData.weight > 300) {
+    if (parseFloat(formData.weight) < 1 || parseFloat(formData.weight) > 300) {
       alert("Weight must be between 0 and 300");
       return;
     }
-    if (formData.height < 0.1 || formData.height > 3.0) {
+    if (
+      parseFloat(formData.height) < 0.1 ||
+      parseFloat(formData.height) > 3.0
+    ) {
       alert("Height must be between 0.1 and 3.0");
       return;
     }
 
-    console.log(formData);
+    const calculatedBMI = (
+      parseFloat(formData.weight) /
+      (parseFloat(formData.height) * parseFloat(formData.height))
+    ).toFixed(1);
+    setBMI(calculatedBMI);
   };
   return (
-    <div className="flex justify-center items-center w-full h-screen">
+    <div className="flex flex-col gap-4 justify-center items-center w-full h-screen">
       <div className="w-11/12 md:w-5/6 lg:w-1/2 flex flex-col gap-4 bg-slate-900 text-slate-200 p-5 rounded-xl">
         <h4 className="text-center text-2xl">Calculate BMI</h4>
 
@@ -57,6 +65,19 @@ function BMICalculator() {
           </button>
         </form>
       </div>
+
+      {BMI > 0 && (
+        <div className="w-11/12 md:w-5/6 lg:w-1/2 flex flex-col gap-4 bg-slate-900 text-slate-200 p-5 rounded-xl">
+          BMI : {BMI}
+        </div>
+      )}
+
+      <Link
+        to="/"
+        className="uppercase bg-slate-900 p-2 text-slate-100 rounded-md cursor-pointer"
+      >
+        Back to home page
+      </Link>
     </div>
   );
 }
