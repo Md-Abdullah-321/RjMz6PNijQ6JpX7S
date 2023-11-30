@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -37,9 +38,15 @@ function BMICalculator() {
     ).toFixed(1);
     setBMI(calculatedBMI);
   };
+
   return (
     <div className="flex flex-col gap-4 justify-center items-center w-full h-screen">
-      <div className="w-11/12 md:w-5/6 lg:w-1/2 flex flex-col gap-4 bg-slate-900 text-slate-200 p-5 rounded-xl">
+      <motion.div
+        className="w-11/12 md:w-5/6 lg:w-1/2 flex flex-col gap-4 bg-slate-900 text-slate-200 p-5 rounded-xl"
+        initial={{ y: -200 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 100, duration: 0.3 }}
+      >
         <h4 className="text-center text-2xl">Calculate BMI</h4>
 
         {/* take height and weight from user  */}
@@ -64,12 +71,17 @@ function BMICalculator() {
             Calculate
           </button>
         </form>
-      </div>
+      </motion.div>
 
       {BMI > 0 && (
-        <div className="w-11/12 md:w-5/6 lg:w-1/2 flex flex-col gap-4 bg-slate-900 text-slate-200 p-5 rounded-xl">
+        <motion.div
+          className="w-11/12 md:w-5/6 lg:w-1/2 flex flex-col gap-4 bg-slate-900 text-slate-200 p-5 rounded-xl"
+          initial={{ x: -200 }}
+          animate={{ x: 0 }}
+          transition={{ type: "spring", stiffness: 200, duration: 0.2 }}
+        >
           BMI : {BMI}
-        </div>
+        </motion.div>
       )}
 
       <Link

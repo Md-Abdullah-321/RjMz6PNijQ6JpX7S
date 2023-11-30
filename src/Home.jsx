@@ -1,10 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="flex justify-center items-center w-full h-screen">
-      <div className="w-11/12 md:w-5/6 lg:w-1/2 flex flex-col gap-4 bg-slate-900 text-slate-200 p-5 rounded-xl">
+    <motion.div
+      className="flex justify-center items-center w-full h-screen"
+      initial={{ x: -200 }}
+      animate={{ x: 0 }}
+      transition={{ type: "spring", stiffness: 100, duration: 0.3 }}
+    >
+      <div className="w-11/12 md:w-5/6 lg:w-2/3 flex flex-col gap-4 bg-slate-900 text-slate-200 p-5 rounded-xl">
         <h3 className="font-bold text-2xl">Abdullah</h3>
         <p>
           <span className="font-semibold">SSC</span>{" "}
@@ -61,7 +67,7 @@ function Home() {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
