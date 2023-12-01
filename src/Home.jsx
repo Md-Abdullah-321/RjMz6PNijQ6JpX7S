@@ -20,7 +20,7 @@ function Home() {
         </p>
         <div className="flex flex-col gap-3">
           {/* frontEnd  */}
-          <ul className="flex gap-5">
+          <ul className="flex gap-2 md:gap-5 flex-wrap">
             <h4 className="font-semibold">FrontEnd:</h4>
             <li className="bg-slate-800 p-1 rounded-lg shadow-md">React.js</li>
             <li className="bg-slate-800 p-1 rounded-lg shadow-md">Next.js</li>
@@ -31,7 +31,7 @@ function Home() {
           </ul>
 
           {/* backend  */}
-          <ul className="flex gap-5">
+          <ul className="flex gap-2 md:gap-5 flex-wrap">
             <h4 className="font-semibold mr-1">Backend: </h4>
             <li className="bg-slate-800 p-1 rounded-lg shadow-md">
               Express.js
@@ -39,7 +39,7 @@ function Home() {
             <li className="bg-slate-800 p-1 rounded-lg shadow-md">Node.js</li>
           </ul>
 
-          <ul className="flex gap-5">
+          <ul className="flex gap-2 md:gap-5 flex-wrap">
             <h4 className="font-semibold">Database:</h4>
             <li className="bg-slate-800 p-1 rounded-lg shadow-md">MongoDB</li>
             <li className="bg-slate-800 p-1 rounded-lg shadow-md">SQL</li>
@@ -48,7 +48,7 @@ function Home() {
 
         <div className="flex gap-4">
           {/* download resume button  */}
-          <button className="w-36 bg-slate-800 p-2 rounded-md cursor-pointer">
+          <button className="w-36 bg-slate-800 p-2 rounded-md cursor-pointer hover:bg-slate-700">
             <a
               className="font-semibold"
               href="https://drive.google.com/file/d/1LKUB0ld416icRLNOl4zAMnNH_xs9lsXj/view?usp=sharing"
@@ -60,7 +60,7 @@ function Home() {
           </button>
 
           {/* Link to BMI Calculation page  */}
-          <button className="w-36 text-slate-800 bg-slate-50 p-2 rounded-md cursor-pointer">
+          <button className="w-36 text-slate-800 bg-slate-50 p-2 rounded-md cursor-pointer hover:bg-slate-400 hover:text-slate-100">
             <Link className="font-semibold" to="/calculate-bmi">
               Calculate BMI
             </Link>

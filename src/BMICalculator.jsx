@@ -86,7 +86,7 @@ function BMICalculator() {
 
       <Link
         to="/"
-        className="uppercase bg-slate-900 p-2 text-slate-100 rounded-md cursor-pointer"
+        className="uppercase bg-slate-900 p-2 text-slate-100 rounded-md cursor-pointer hover:bg-slate-800"
       >
         Back to home page
       </Link>
